@@ -62,9 +62,9 @@ Artifacts are JSON serializable and validated with Ajv before return. Canonical 
 
 ## Evidence and Sanity Context
 
-The Sanity project is `gjy7dyq2.production`. Sanity Context MCP's `initial_context`, `schema_explorer`, and GROQ query tools were verified in the previous phase. The repository's deterministic investigation runtime intentionally reads [data/sanity-evidence-snapshot.json](../data/sanity-evidence-snapshot.json), previously queried from the Sanity project, so UI/API/CLI runs do not depend on network availability. The snapshot metadata records project, dataset, retrieval date, query, and count; each investigation additionally hashes the full snapshot content.
+The Sanity project is `gjy7dyq2.production`. Sanity Context MCP's `initial_context`, `schema_explorer`, and GROQ query tools were verified in the previous phase. Production UI/API/CLI investigations query the eight Relia document types through the Context MCP `groq_query` tool for each decision. The response must report the expected project and dataset and include all required types. Local development and benchmark runs read [data/sanity-evidence-snapshot.json](../data/sanity-evidence-snapshot.json), previously queried from the same project, so those modes stay deterministic and do not require credentials.
 
-There are no Sanity writes, live Context calls, fallback fixtures, or synthetic content in the investigation path. Refreshing the snapshot is a separate evidence-ingestion operation. The source documents remain authoritative and independently linked from each proof item.
+There are no Sanity writes, fallback fixtures, or synthetic content in the investigation path. Production performs a live Context query; local snapshot mode performs no network call. The source documents remain authoritative and independently linked from each proof item.
 
 ## Versioned API
 

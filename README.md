@@ -31,7 +31,7 @@ flowchart TD
   Artifact --> Consumers[UI / CLI / external agent]
 ```
 
-The live Context MCP connection supports schema-aware tools and GROQ dataset queries. For deterministic local runs, the repository uses the checked-in snapshot sourced from the same project and dataset.
+Production investigations query the live Sanity Context MCP endpoint with GROQ on every request. The response is checked against project `gjy7dyq2.production` and must include all eight Relia schema types before reasoning begins. Local development and benchmark runs use the checked-in snapshot for deterministic replay; production never silently falls back to it. See [live Context deployment](docs/live-context-deployment.md).
 
 ## Sanity Context integration
 
@@ -108,7 +108,7 @@ These results are from a small reviewed pilot set and are not a general RAG benc
 ## Limitations
 
 - Coverage is limited to the current source-backed Next.js, React, React DOM, Node.js, and TypeScript corpus; it is not general compatibility coverage.
-- Investigations use an offline snapshot for deterministic behavior. Live MCP smoke testing verifies the connection and schema/query access, not live retrieval for each decision.
+- Local development and benchmark runs use an offline snapshot for deterministic behavior. Production investigations retrieve the current dataset through Sanity Context MCP for each decision; the benchmark remains pinned to the reviewed snapshot.
 - The local investigation store is single-machine and unauthenticated. Fingerprints are reproducibility identifiers, not signed attestations.
 - Decisions are bounded by available evidence and cannot establish project-specific code migrations that were not supplied as context.
 

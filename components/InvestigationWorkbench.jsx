@@ -129,7 +129,7 @@ export default function InvestigationWorkbench() {
   return <main className="app-frame">
     <header className="masthead">
       <a className="brand" href="#top" aria-label="Relia home"><span className="brand-mark" aria-hidden="true"><i /><i /><i /></span><span>RELIA</span></a>
-      <div className="masthead-caption"><span>Evidence-backed upgrade risk analysis</span><span className="masthead-status"><i /> LOCAL EVIDENCE READY</span></div>
+      <div className="masthead-caption"><span>Evidence-backed upgrade risk analysis</span><span className="masthead-status"><i /> STRUCTURED EVIDENCE</span></div>
       <button type="button" className="challenge-trigger" onClick={() => setChallengeOpen(true)}><span className="challenge-trigger-glyph" aria-hidden="true">↗</span> CHALLENGE RELIA <span className="trigger-count">12</span></button>
     </header>
 
@@ -138,7 +138,7 @@ export default function InvestigationWorkbench() {
       <div className="intro-side"><span className="intro-index">01 <i /> 03</span><p>REQUIREMENTS<br />RELATIONSHIPS<br />PROOF</p><span className="intro-side-rule" /></div>
     </section>
 
-    <div className="workbench-heading"><div><span className="section-number">01</span><div><p className="eyebrow">UPGRADE INVESTIGATION</p><h2>Define the change</h2></div></div><span className="snapshot-chip"><i /> Sanity evidence snapshot</span></div>
+    <div className="workbench-heading"><div><span className="section-number">01</span><div><p className="eyebrow">UPGRADE INVESTIGATION</p><h2>Define the change</h2></div></div><span className="snapshot-chip"><i /> {investigation?.evidenceSnapshot?.retrieval?.includes("live per investigation") ? "LIVE · SANITY CONTEXT GROQ" : investigation ? "OFFLINE · SANITY SNAPSHOT" : "SANITY STRUCTURED EVIDENCE"}</span></div>
 
     <div className="workbench-grid">
       <section className="input-panel" aria-labelledby="stack-title">
@@ -164,7 +164,7 @@ export default function InvestigationWorkbench() {
         <button type="button" className="investigate-button" onClick={investigate} disabled={busy}>
           <span>{busy ? "INVESTIGATING" : "INVESTIGATE UPGRADE"}</span><span className="button-arrow" aria-hidden="true">{busy ? <span className="mini-loader light" /> : "↗"}</span>
         </button>
-        <p className="input-footnote"><span aria-hidden="true">⌁</span> Deterministic reasoning · Offline Sanity snapshot · Source-linked proof</p>
+        <p className="input-footnote"><span aria-hidden="true">⌁</span> Typed relationships · Source-linked proof · Missing evidence stays unresolved</p>
       </section>
 
       <DecisionPanel investigation={investigation} artifact={artifact} busy={busy} error={error} proofOpen={proofOpen} onToggleProof={toggleProof} onAttack={attackDecision} attack={attack} attacking={attacking} proofLoading={proofLoading} proofError={proofError} proofTrace={proofPayload?.proof?.trace} />
@@ -172,7 +172,7 @@ export default function InvestigationWorkbench() {
 
     <InfrastructureDemo />
 
-    <footer className="app-footer"><span>RELIA <i>·</i> UPGRADE RISK RESEARCH</span><span>LOCAL REASONING <i>·</i> SNAPSHOT {"2026.10.05"}</span><button type="button" onClick={() => setChallengeOpen(true)}>PILOT BENCHMARK <span aria-hidden="true">↗</span></button></footer>
+    <footer className="app-footer"><span>RELIA <i>·</i> UPGRADE RISK RESEARCH</span><span>STRUCTURED CONTENT <i>·</i> SANITY CONTEXT</span><button type="button" onClick={() => setChallengeOpen(true)}>PILOT BENCHMARK <span aria-hidden="true">↗</span></button></footer>
     <ChallengeMode open={challengeOpen} onClose={() => setChallengeOpen(false)} />
   </main>;
 }

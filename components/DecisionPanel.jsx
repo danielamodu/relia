@@ -26,7 +26,7 @@ export function DecisionPanel({ investigation, artifact, busy, error, proofOpen,
   const verified = Boolean(artifact && redTeam?.executed && redTeam.status !== "FAILED");
   return <section className="result-shell" aria-live="polite" aria-busy={busy}>
     {busy ? <div className="investigating" role="status"><span className="loader-mark" /><div><p className="eyebrow">RELATIONSHIP TRAVERSAL</p><strong>Following version requirements and conditions…</strong></div></div> : null}
-    {error ? <div className="request-error" role="alert"><span className="error-mark">!</span><div><p className="eyebrow">INVESTIGATION STOPPED</p><h2>Evidence could not be loaded.</h2><p>{error}</p><span>Check the local snapshot and try again.</span></div></div> : null}
+    {error ? <div className="request-error" role="alert"><span className="error-mark">!</span><div><p className="eyebrow">INVESTIGATION STOPPED</p><h2>Evidence could not be loaded.</h2><p>{error}</p><span>Check the server-side Sanity Context settings and try again.</span></div></div> : null}
     {investigation && !busy ? <>
       <div className="decision-topline"><p className="eyebrow">{investigation.status} INVESTIGATION <span className="eyebrow-dot">·</span> {investigation.decision.confidence} CONFIDENCE</p><span className="source-count">{sources.length} SOURCES</span></div>
       <div className={`decision-hero ${statusClass(decision)}`}>
@@ -140,7 +140,7 @@ function AttackPanel({ attack }) {
     <div className="attack-outcome">
       <div className={`attack-outcome-mark ${status}`} aria-hidden="true">{status === "challenge" ? "!" : "✓"}</div>
       <div><p className={`eyebrow ${status}`}>{attack.status === "CHALLENGE_FOUND" ? "CHALLENGE FOUND" : "NO CHALLENGE FOUND"}</p>
-        {attack.challenges?.length ? <ul className="challenge-list">{attack.challenges.slice(0, 4).map((challenge, index) => <li key={`${challenge.evidenceId ?? challenge.kind}-${index}`}><strong>{challenge.evidenceId ?? challenge.kind}</strong><span>{challenge.message}</span></li>)}</ul> : <p>No contradictory record was found in the local evidence snapshot.</p>}
+        {attack.challenges?.length ? <ul className="challenge-list">{attack.challenges.slice(0, 4).map((challenge, index) => <li key={`${challenge.evidenceId ?? challenge.kind}-${index}`}><strong>{challenge.evidenceId ?? challenge.kind}</strong><span>{challenge.message}</span></li>)}</ul> : <p>No contradictory record was found in the retrieved evidence.</p>}
         <div className="decision-shift"><span>FINAL DECISION</span><strong>{attack.initialDecision}</strong><i aria-hidden="true">→</i><strong>{attack.finalDecision}</strong>{attack.initialDecision !== attack.finalDecision ? <em>CHANGED</em> : <em>UNCHANGED</em>}</div>
       </div>
     </div>

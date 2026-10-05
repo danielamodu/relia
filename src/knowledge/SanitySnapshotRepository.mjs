@@ -36,7 +36,11 @@ export class SanitySnapshotRepository extends KnowledgeRepository {
 
   static async open() {
     const snapshot = JSON.parse(await readFile(pathToSnapshot, "utf8"));
-    if (!Array.isArray(snapshot) || snapshot.length === 0) throw new Error(`Sanity evidence snapshot is empty: ${pathToSnapshot}`);
+    return SanitySnapshotRepository.fromDocuments(snapshot);
+  }
+
+  static fromDocuments(snapshot) {
+    if (!Array.isArray(snapshot) || snapshot.length === 0) throw new Error("Sanity evidence contains no documents.");
     const repository = new SanitySnapshotRepository();
     repository.#documents = snapshot.map(resolveReferences);
     repository.#data = Object.fromEntries(Object.values(typeToCollection).map((collection) => [collection, []]));

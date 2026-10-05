@@ -3,6 +3,7 @@ import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import Ajv from "ajv";
 import { SanitySnapshotRepository } from "../knowledge/SanitySnapshotRepository.mjs";
+import { loadLiveSanityContextRepository } from "../sanity-context/live-repository.mjs";
 import { EvidenceGraph } from "../infrastructure/EvidenceGraph.mjs";
 import { investigate, validateProofTrace } from "../reasoning/engine.mjs";
 import { canonicalizeChangeContract, toReasoningInput, validateChangeContract } from "./change-contract.mjs";
@@ -14,6 +15,13 @@ let artifactValidatorPromise;
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
 
 async function getRuntime() {
+  const source = process.env.RELIA_KNOWLEDGE_SOURCE ?? (process.env.NODE_ENV === "production" ? "context-mcp" : "snapshot");
+  if (source === "context-mcp") {
+    const { repository, snapshot } = await loadLiveSanityContextRepository();
+    return { repository, graph: new EvidenceGraph(repository, snapshot), snapshot };
+  }
+  if (process.env.NODE_ENV === "production") throw new Error("Production investigations must use the live Sanity Context MCP source.");
+  if (source !== "snapshot") throw new Error("RELIA_KNOWLEDGE_SOURCE must be either context-mcp or snapshot.");
   runtimePromise ??= (async () => {
     const [repository, metadata, snapshotBytes] = await Promise.all([
       SanitySnapshotRepository.open(),
@@ -22,7 +30,7 @@ async function getRuntime() {
     ]);
     const snapshotHash = sha256(snapshotBytes);
     const snapshot = {
-      id: `sanity:${metadata.projectId}.${metadata.dataset}:${metadata.retrievedAt}:sha256:${snapshotHash}`,
+      id: `sanity:${metadata.projectId}.${metadata.dataset}:sha256:${snapshotHash}`,
       projectId: metadata.projectId,
       dataset: metadata.dataset,
       retrievedAt: metadata.retrievedAt,
@@ -120,7 +128,7 @@ export async function createInvestigation(rawContract, options = {}) {
     if (!engineResult.redTeam || !["PASSED", "CHALLENGE_FOUND"].includes(engineResult.redTeam.status)) throw new Error("Mandatory red-team verification did not complete.");
 
     const unresolved = [...engineResult.unresolved];
-    if (!currentVersion) unresolved.push(`Current version ${contract.subject.from} for ${subjectTechnology?.name ?? contract.subject.technology} is not resolved in the evidence snapshot.`);
+    if (!currentVersion) unresolved.push(`Current version ${contract.subject.from} for ${subjectTechnology?.name ?? contract.subject.technology} is not resolved in the retrieved evidence.`);
     let finalDecision = engineResult.decision;
     if (!currentVersion && finalDecision === "SAFE") finalDecision = "UNRESOLVED";
     const currentVersionProof = currentVersion ? runtime.graph.traceProvenance([currentVersion._id]).map((record) => ({
