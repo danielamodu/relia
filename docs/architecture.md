@@ -80,7 +80,7 @@ All routes run in the Node.js runtime and use explicit JSON errors:
 
 Phase 4 `/api/investigate` and `/api/challenge` remain compatibility routes. The judge UI uses the versioned API for investigation creation, red-team replay, and proof retrieval. Benchmark case discovery remains on `/api/challenge`; replayed cases are sent to `/api/v1/investigations`.
 
-The local JSON store is intentionally small and single-machine. It is not a cloud database, multi-tenant store, authenticated API, or signed artifact registry.
+The local JSON store is intentionally small and single-machine. Vercel route functions do not write investigations into the deployment bundle: create returns the complete artifact, the UI reads proof from that artifact, and red-team replay resubmits the original contract. This is not a cloud database, multi-tenant store, authenticated API, or signed artifact registry.
 
 ## CLI
 

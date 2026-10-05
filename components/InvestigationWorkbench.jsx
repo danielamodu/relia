@@ -103,7 +103,7 @@ export default function InvestigationWorkbench() {
     if (!investigation) return;
     setAttacking(true); setAttack(null);
     try {
-      const response = await fetch(`/api/v1/investigations/${investigation.id}/attack`, { method: "POST" });
+      const response = await fetch(`/api/v1/investigations/${investigation.id}/attack`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ contract: investigation.contract }) });
       const body = await response.json();
       if (!response.ok) throw new Error(body.error?.message ?? "Red-team investigation failed.");
       setInvestigation(body.investigation);
@@ -116,7 +116,12 @@ export default function InvestigationWorkbench() {
   async function toggleProof() {
     if (proofOpen) { setProofOpen(false); return; }
     if (!investigation) return;
-    setProofOpen(true); setProofLoading(true); setProofError(""); setProofPayload(null);
+    setProofOpen(true); setProofLoading(false); setProofError("");
+    if (artifact) {
+      setProofPayload({ investigationId: investigation.id, fingerprint: investigation.fingerprint, proof: artifact.proof, provenance: artifact.provenance });
+      return;
+    }
+    setProofLoading(true); setProofPayload(null);
     try {
       const response = await fetch(`/api/v1/investigations/${investigation.id}/proof`);
       const body = await response.json();

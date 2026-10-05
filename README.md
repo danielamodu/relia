@@ -109,7 +109,7 @@ These results are from a small reviewed pilot set and are not a general RAG benc
 
 - Coverage is limited to the current source-backed Next.js, React, React DOM, Node.js, and TypeScript corpus; it is not general compatibility coverage.
 - Local development and benchmark runs use an offline snapshot for deterministic behavior. Production investigations retrieve the current dataset through Sanity Context MCP for each decision; the benchmark remains pinned to the reviewed snapshot.
-- The local investigation store is single-machine and unauthenticated. Fingerprints are reproducibility identifiers, not signed attestations.
+- Local investigation records are single-machine and unauthenticated. On Vercel, creation returns the complete artifact without writing to the deployment filesystem; the UI uses that returned proof and supplies the original contract for red-team replay. Fingerprints are reproducibility identifiers, not signed attestations.
 - Decisions are bounded by available evidence and cannot establish project-specific code migrations that were not supplied as context.
 
 ## Running locally

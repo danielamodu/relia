@@ -103,6 +103,9 @@ async function validateDecisionArtifact(artifact) {
 }
 
 async function persist(investigation) {
+  // Vercel route functions cannot share durable writes to the deployment bundle.
+  // The API response is the portable record; interactive clients replay with its contract.
+  if (process.env.VERCEL) return;
   await mkdir(storeDirectory, { recursive: true });
   const destination = path.join(storeDirectory, `${investigation.id}.json`);
   const temporary = `${destination}.${process.pid}.${Date.now()}.tmp`;
@@ -209,7 +212,9 @@ export async function getInvestigation(id) {
   catch (error) { if (error.code === "ENOENT") return null; throw error; }
 }
 
-export async function attackInvestigation(id) {
+export async function attackInvestigation(id, contract) {
+  if (!/^inv_[a-f0-9]{24}$/.test(String(id))) return null;
+  if (contract) return { ...(await createInvestigation(contract)), replayedFrom: id };
   const existing = await getInvestigation(id);
   if (!existing) return null;
   const replay = await createInvestigation(existing.investigation.contract);
