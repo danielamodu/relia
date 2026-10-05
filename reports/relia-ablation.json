@@ -1,0 +1,377 @@
+{
+  "reportType": "relia-phase-3-relationship-ablation",
+  "generatedAt": "2026-10-05T01:43:33.128Z",
+  "evidenceSnapshot": {
+    "projectId": "gjy7dyq2",
+    "dataset": "production",
+    "retrievedAt": "2026-10-05",
+    "retrieval": "Sanity CLI documents query with GROQ against authenticated CLI session",
+    "query": "*[_type in [\"technology\",\"version\",\"requirement\",\"compatibilityRule\",\"breakingChange\",\"migration\",\"exception\",\"source\"]] | order(_type asc, _id asc)",
+    "documentCount": 52,
+    "note": "Includes returned Sanity document IDs, fields, and reference objects. Offline benchmark uses this checked-in evidence snapshot and performs no network calls.",
+    "actualSnapshotDocuments": 52,
+    "sourceDocumentCount": 10
+  },
+  "method": "FULL uses typed document references, version scope, joins, and the red-team pass. ABLATED uses the same Sanity document text and top-10 flat retrieval, leaves references as opaque IDs, and applies a conservative decision rule without joins.",
+  "fullSystem": {
+    "accuracy": 1,
+    "correct": 12,
+    "caseCount": 12
+  },
+  "ablatedSystem": {
+    "accuracy": 0.6666666666666666,
+    "correct": 8,
+    "caseCount": 12
+  },
+  "accuracyDifference": 0.33333333333333337,
+  "relationshipAwareWins": [
+    "c01-next151-react19-pages",
+    "c02-next16-node-floor",
+    "c04-next16-removes-node18",
+    "c07-next15-pages-react18"
+  ],
+  "flatWins": [],
+  "sameOutcomeDifferentDecision": [
+    {
+      "caseId": "c01-next151-react19-pages",
+      "expected": "SAFE",
+      "full": "SAFE",
+      "ablated": "UNRESOLVED"
+    },
+    {
+      "caseId": "c02-next16-node-floor",
+      "expected": "BLOCKED",
+      "full": "BLOCKED",
+      "ablated": "UNRESOLVED"
+    },
+    {
+      "caseId": "c04-next16-removes-node18",
+      "expected": "BLOCKED",
+      "full": "BLOCKED",
+      "ablated": "UNRESOLVED"
+    },
+    {
+      "caseId": "c07-next15-pages-react18",
+      "expected": "SAFE",
+      "full": "SAFE",
+      "ablated": "UNRESOLVED"
+    }
+  ],
+  "caseResults": [
+    {
+      "id": "c01-next151-react19-pages",
+      "expected": "SAFE",
+      "full": "SAFE",
+      "ablated": "UNRESOLVED",
+      "expectedEvidence": [
+        "compat-next15-app-react19"
+      ],
+      "fullEvidence": [
+        "version-next-15-1",
+        "compat-next15-app-react19"
+      ],
+      "ablatedEvidence": [
+        "compat-next15-pages-react18",
+        "compat-next15-app-react19"
+      ]
+    },
+    {
+      "id": "c02-next16-node-floor",
+      "expected": "BLOCKED",
+      "full": "BLOCKED",
+      "ablated": "UNRESOLVED",
+      "expectedEvidence": [
+        "requirement-next16-node"
+      ],
+      "fullEvidence": [
+        "version-next-16",
+        "requirement-next16-node",
+        "requirement-next16-typescript",
+        "compat-next16-app-react19-2",
+        "compat-next16-proxy-edge-incompatible",
+        "breaking-next16-middleware-proxy",
+        "migration-middleware-proxy",
+        "breaking-next16-node18",
+        "migration-node-runtime",
+        "breaking-next16-sitemap-id",
+        "migration-next16-sitemap-id",
+        "compat-node20-eol-temporal",
+        "exception-next16-edge-middleware"
+      ],
+      "ablatedEvidence": [
+        "compat-next16-app-react19-2"
+      ]
+    },
+    {
+      "id": "c03-next16-typescript-floor",
+      "expected": "BLOCKED",
+      "full": "BLOCKED",
+      "ablated": "BLOCKED",
+      "expectedEvidence": [
+        "requirement-next16-typescript"
+      ],
+      "fullEvidence": [
+        "version-next-16",
+        "requirement-next16-node",
+        "requirement-next16-typescript",
+        "compat-next16-app-react19-2",
+        "compat-next16-proxy-edge-incompatible",
+        "breaking-next16-middleware-proxy",
+        "migration-middleware-proxy",
+        "breaking-next16-node18",
+        "migration-node-runtime",
+        "breaking-next16-sitemap-id",
+        "migration-next16-sitemap-id",
+        "compat-node20-eol-temporal",
+        "exception-next16-edge-middleware"
+      ],
+      "ablatedEvidence": [
+        "compat-next16-app-react19-2",
+        "compat-node20-eol-temporal",
+        "compat-next16-proxy-edge-incompatible",
+        "requirement-next16-typescript"
+      ]
+    },
+    {
+      "id": "c04-next16-removes-node18",
+      "expected": "BLOCKED",
+      "full": "BLOCKED",
+      "ablated": "UNRESOLVED",
+      "expectedEvidence": [
+        "requirement-next16-node",
+        "breaking-next16-node18"
+      ],
+      "fullEvidence": [
+        "version-next-16",
+        "requirement-next16-node",
+        "requirement-next16-typescript",
+        "compat-next16-app-react19-2",
+        "compat-next16-proxy-edge-incompatible",
+        "breaking-next16-middleware-proxy",
+        "migration-middleware-proxy",
+        "breaking-next16-node18",
+        "migration-node-runtime",
+        "breaking-next16-sitemap-id",
+        "migration-next16-sitemap-id",
+        "compat-node20-eol-temporal",
+        "exception-next16-edge-middleware",
+        "version-node-18-18"
+      ],
+      "ablatedEvidence": [
+        "compat-next16-proxy-edge-incompatible",
+        "compat-next16-app-react19-2"
+      ]
+    },
+    {
+      "id": "c05-next16-proxy-edge",
+      "expected": "BLOCKED",
+      "full": "BLOCKED",
+      "ablated": "BLOCKED",
+      "expectedEvidence": [
+        "compat-next16-proxy-edge-incompatible",
+        "breaking-next16-middleware-proxy",
+        "migration-middleware-proxy"
+      ],
+      "fullEvidence": [
+        "version-next-16",
+        "requirement-next16-node",
+        "requirement-next16-typescript",
+        "compat-next16-proxy-edge-incompatible",
+        "breaking-next16-middleware-proxy",
+        "migration-middleware-proxy",
+        "breaking-next16-node18",
+        "migration-node-runtime",
+        "breaking-next16-sitemap-id",
+        "migration-next16-sitemap-id",
+        "compat-next16-app-react19-2",
+        "compat-node20-eol-temporal",
+        "exception-next16-edge-middleware"
+      ],
+      "ablatedEvidence": [
+        "compat-next16-proxy-edge-incompatible",
+        "compat-node20-eol-temporal",
+        "requirement-next16-node"
+      ]
+    },
+    {
+      "id": "c06-next16-proxy-runtime-unknown",
+      "expected": "UNRESOLVED",
+      "full": "UNRESOLVED",
+      "ablated": "UNRESOLVED",
+      "expectedEvidence": [
+        "compat-next16-proxy-edge-incompatible",
+        "exception-next16-edge-middleware"
+      ],
+      "fullEvidence": [
+        "version-next-16",
+        "requirement-next16-node",
+        "requirement-next16-typescript",
+        "compat-next16-proxy-edge-incompatible",
+        "breaking-next16-middleware-proxy",
+        "migration-middleware-proxy",
+        "breaking-next16-node18",
+        "migration-node-runtime",
+        "breaking-next16-sitemap-id",
+        "migration-next16-sitemap-id",
+        "compat-next16-app-react19-2",
+        "compat-node20-eol-temporal",
+        "exception-next16-edge-middleware"
+      ],
+      "ablatedEvidence": [
+        "compat-next16-proxy-edge-incompatible",
+        "compat-node20-eol-temporal",
+        "compat-next16-app-react19-2"
+      ]
+    },
+    {
+      "id": "c07-next15-pages-react18",
+      "expected": "SAFE",
+      "full": "SAFE",
+      "ablated": "UNRESOLVED",
+      "expectedEvidence": [
+        "compat-next15-pages-react18",
+        "exception-next15-pages-react18"
+      ],
+      "fullEvidence": [
+        "version-next-15",
+        "requirement-next15-node",
+        "requirement-next15-react-dom19",
+        "exception-next15-pages-react18",
+        "requirement-next15-react19",
+        "compat-next15-pages-react18"
+      ],
+      "ablatedEvidence": [
+        "compat-next15-pages-react18",
+        "requirement-next15-react-dom19",
+        "exception-next15-pages-react18",
+        "requirement-next15-react19",
+        "compat-next15-app-react19"
+      ]
+    },
+    {
+      "id": "c08-next15-react18-app-router",
+      "expected": "BLOCKED",
+      "full": "BLOCKED",
+      "ablated": "BLOCKED",
+      "expectedEvidence": [
+        "requirement-next15-react19",
+        "requirement-next15-react-dom19",
+        "exception-next15-pages-react18"
+      ],
+      "fullEvidence": [
+        "version-next-15",
+        "requirement-next15-node",
+        "requirement-next15-react-dom19",
+        "exception-next15-pages-react18",
+        "requirement-next15-react19",
+        "compat-next15-pages-react18"
+      ],
+      "ablatedEvidence": [
+        "compat-next15-pages-react18",
+        "compat-next15-app-react19",
+        "requirement-next15-react-dom19",
+        "requirement-next15-react19",
+        "requirement-next15-node"
+      ]
+    },
+    {
+      "id": "c09-next15-react18-router-unknown",
+      "expected": "UNRESOLVED",
+      "full": "UNRESOLVED",
+      "ablated": "UNRESOLVED",
+      "expectedEvidence": [
+        "requirement-next15-react19",
+        "requirement-next15-react-dom19",
+        "compat-next15-pages-react18",
+        "exception-next15-pages-react18"
+      ],
+      "fullEvidence": [
+        "version-next-15",
+        "requirement-next15-node",
+        "requirement-next15-react-dom19",
+        "exception-next15-pages-react18",
+        "requirement-next15-react19",
+        "compat-next15-pages-react18"
+      ],
+      "ablatedEvidence": [
+        "requirement-next15-react-dom19",
+        "exception-next15-pages-react18",
+        "requirement-next15-react19",
+        "compat-next15-pages-react18",
+        "compat-next15-app-react19"
+      ]
+    },
+    {
+      "id": "c10-next16-node20-eol",
+      "expected": "UNRESOLVED",
+      "full": "UNRESOLVED",
+      "ablated": "UNRESOLVED",
+      "expectedEvidence": [
+        "requirement-next16-node",
+        "compat-node20-eol-temporal"
+      ],
+      "fullEvidence": [
+        "version-next-16",
+        "requirement-next16-node",
+        "requirement-next16-typescript",
+        "compat-next16-app-react19-2",
+        "compat-next16-proxy-edge-incompatible",
+        "compat-node20-eol-temporal",
+        "breaking-next16-middleware-proxy",
+        "migration-middleware-proxy",
+        "breaking-next16-node18",
+        "migration-node-runtime",
+        "breaking-next16-sitemap-id",
+        "migration-next16-sitemap-id",
+        "exception-next16-edge-middleware",
+        "version-node-20-9"
+      ],
+      "ablatedEvidence": [
+        "compat-node20-eol-temporal",
+        "compat-next16-app-react19-2",
+        "compat-next16-proxy-edge-incompatible"
+      ]
+    },
+    {
+      "id": "c11-next16-react-exact-floor",
+      "expected": "UNRESOLVED",
+      "full": "UNRESOLVED",
+      "ablated": "UNRESOLVED",
+      "expectedEvidence": [
+        "compat-next16-app-react19-2"
+      ],
+      "fullEvidence": [
+        "version-next-16",
+        "requirement-next16-node",
+        "requirement-next16-typescript",
+        "compat-next16-app-react19-2",
+        "compat-next16-proxy-edge-incompatible",
+        "breaking-next16-middleware-proxy",
+        "migration-middleware-proxy",
+        "breaking-next16-node18",
+        "migration-node-runtime",
+        "breaking-next16-sitemap-id",
+        "migration-next16-sitemap-id",
+        "compat-node20-eol-temporal",
+        "exception-next16-edge-middleware"
+      ],
+      "ablatedEvidence": [
+        "compat-next16-app-react19-2"
+      ]
+    },
+    {
+      "id": "c12-unknown-vite-relationship",
+      "expected": "UNRESOLVED",
+      "full": "UNRESOLVED",
+      "ablated": "UNRESOLVED",
+      "expectedEvidence": [],
+      "fullEvidence": [],
+      "ablatedEvidence": [
+        "compat-next16-app-react19-2",
+        "compat-next16-proxy-edge-incompatible",
+        "requirement-next16-typescript",
+        "compat-node20-eol-temporal"
+      ]
+    }
+  ]
+}

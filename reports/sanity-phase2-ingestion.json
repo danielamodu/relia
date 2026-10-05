@@ -1,0 +1,415 @@
+{
+  "reportType": "relia-sanity-phase-2-ingestion",
+  "generatedAt": "2026-10-05",
+  "projectId": "gjy7dyq2",
+  "dataset": "production",
+  "studio": "https://relia.sanity.studio/",
+  "ingestion": {
+    "method": "Sanity CLI documents create --replace, authenticated via the configured Sanity CLI session",
+    "datasetWasEmptyForReliaTypesBeforeIngestion": true,
+    "createdDocuments": [
+      {
+        "_id": "breaking-next15-async-request",
+        "_type": "breakingChange"
+      },
+      {
+        "_id": "breaking-next16-middleware-proxy",
+        "_type": "breakingChange"
+      },
+      {
+        "_id": "breaking-next16-node18",
+        "_type": "breakingChange"
+      },
+      {
+        "_id": "breaking-next16-sitemap-id",
+        "_type": "breakingChange"
+      },
+      {
+        "_id": "breaking-react19-render",
+        "_type": "breakingChange"
+      },
+      {
+        "_id": "compat-next15-app-react19",
+        "_type": "compatibilityRule"
+      },
+      {
+        "_id": "compat-next15-pages-react18",
+        "_type": "compatibilityRule"
+      },
+      {
+        "_id": "compat-next16-app-react19-2",
+        "_type": "compatibilityRule"
+      },
+      {
+        "_id": "compat-next16-proxy-edge-incompatible",
+        "_type": "compatibilityRule"
+      },
+      {
+        "_id": "compat-node20-eol-temporal",
+        "_type": "compatibilityRule"
+      },
+      {
+        "_id": "compat-react-reactdom-matched-major",
+        "_type": "compatibilityRule"
+      },
+      {
+        "_id": "exception-next15-pages-react18",
+        "_type": "exception"
+      },
+      {
+        "_id": "exception-next16-edge-middleware",
+        "_type": "exception"
+      },
+      {
+        "_id": "migration-async-request-apis",
+        "_type": "migration"
+      },
+      {
+        "_id": "migration-middleware-proxy",
+        "_type": "migration"
+      },
+      {
+        "_id": "migration-next16-sitemap-id",
+        "_type": "migration"
+      },
+      {
+        "_id": "migration-node-runtime",
+        "_type": "migration"
+      },
+      {
+        "_id": "migration-reactdom-render",
+        "_type": "migration"
+      },
+      {
+        "_id": "requirement-next15-node",
+        "_type": "requirement"
+      },
+      {
+        "_id": "requirement-next15-react-dom19",
+        "_type": "requirement"
+      },
+      {
+        "_id": "requirement-next15-react19",
+        "_type": "requirement"
+      },
+      {
+        "_id": "requirement-next16-node",
+        "_type": "requirement"
+      },
+      {
+        "_id": "requirement-next16-typescript",
+        "_type": "requirement"
+      },
+      {
+        "_id": "source-next15-release",
+        "_type": "source"
+      },
+      {
+        "_id": "source-next15-upgrade",
+        "_type": "source"
+      },
+      {
+        "_id": "source-next151-release",
+        "_type": "source"
+      },
+      {
+        "_id": "source-next16-upgrade",
+        "_type": "source"
+      },
+      {
+        "_id": "source-node-eol",
+        "_type": "source"
+      },
+      {
+        "_id": "source-node-releases",
+        "_type": "source"
+      },
+      {
+        "_id": "source-react19-release",
+        "_type": "source"
+      },
+      {
+        "_id": "source-react19-upgrade",
+        "_type": "source"
+      },
+      {
+        "_id": "source-react192-release",
+        "_type": "source"
+      },
+      {
+        "_id": "source-ts51-release",
+        "_type": "source"
+      },
+      {
+        "_id": "tech-nextjs",
+        "_type": "technology"
+      },
+      {
+        "_id": "tech-node",
+        "_type": "technology"
+      },
+      {
+        "_id": "tech-react",
+        "_type": "technology"
+      },
+      {
+        "_id": "tech-react-dom",
+        "_type": "technology"
+      },
+      {
+        "_id": "tech-typescript",
+        "_type": "technology"
+      },
+      {
+        "_id": "version-next-15",
+        "_type": "version"
+      },
+      {
+        "_id": "version-next-15-1",
+        "_type": "version"
+      },
+      {
+        "_id": "version-next-16",
+        "_type": "version"
+      },
+      {
+        "_id": "version-node-18-18",
+        "_type": "version"
+      },
+      {
+        "_id": "version-node-20-9",
+        "_type": "version"
+      },
+      {
+        "_id": "version-node-22",
+        "_type": "version"
+      },
+      {
+        "_id": "version-react-18",
+        "_type": "version"
+      },
+      {
+        "_id": "version-react-19",
+        "_type": "version"
+      },
+      {
+        "_id": "version-react-19-2",
+        "_type": "version"
+      },
+      {
+        "_id": "version-react-dom-18",
+        "_type": "version"
+      },
+      {
+        "_id": "version-react-dom-19",
+        "_type": "version"
+      },
+      {
+        "_id": "version-react-dom-19-2",
+        "_type": "version"
+      },
+      {
+        "_id": "version-ts-5",
+        "_type": "version"
+      },
+      {
+        "_id": "version-ts-5-1",
+        "_type": "version"
+      }
+    ],
+    "documentCount": 52,
+    "documentCountsByType": {
+      "breakingChange": 5,
+      "compatibilityRule": 6,
+      "exception": 2,
+      "migration": 5,
+      "requirement": 5,
+      "source": 10,
+      "technology": 5,
+      "version": 14
+    },
+    "sourceCount": 10,
+    "sourceUrls": [
+      {
+        "id": "source-next15-release",
+        "title": "Next.js 15",
+        "url": "https://nextjs.org/blog/next-15"
+      },
+      {
+        "id": "source-next15-upgrade",
+        "title": "How to upgrade to version 15",
+        "url": "https://nextjs.org/docs/app/guides/upgrading/version-15"
+      },
+      {
+        "id": "source-next16-upgrade",
+        "title": "How to upgrade to version 16",
+        "url": "https://nextjs.org/docs/app/guides/upgrading/version-16"
+      },
+      {
+        "id": "source-next151-release",
+        "title": "Next.js 15.1",
+        "url": "https://nextjs.org/blog/next-15-1"
+      },
+      {
+        "id": "source-react19-upgrade",
+        "title": "React 19 Upgrade Guide",
+        "url": "https://react.dev/blog/2024/04/25/react-19-upgrade-guide"
+      },
+      {
+        "id": "source-react19-release",
+        "title": "React v19",
+        "url": "https://react.dev/blog/2024/12/05/react-19"
+      },
+      {
+        "id": "source-node-releases",
+        "title": "Node.js Releases",
+        "url": "https://nodejs.org/en/about/previous-releases"
+      },
+      {
+        "id": "source-node-eol",
+        "title": "Node.js End-of-Life",
+        "url": "https://nodejs.org/en/about/eol"
+      },
+      {
+        "id": "source-ts51-release",
+        "title": "TypeScript 5.1 Release Notes",
+        "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-1.html"
+      },
+      {
+        "id": "source-react192-release",
+        "title": "React 19.2",
+        "url": "https://react.dev/blog/2025/10/01/react-19-2"
+      }
+    ],
+    "relationshipCountsByField": {
+      "affectedVersions": 5,
+      "appliesTo": 13,
+      "dependsOn": 8,
+      "exceptions": 1,
+      "migrations": 5,
+      "requiredFor": 5,
+      "requiredTechnology": 5,
+      "sources": 46,
+      "subject": 5,
+      "technology": 14
+    },
+    "relationshipCount": 107,
+    "failedRecords": [],
+    "unresolvedSourceUrls": []
+  },
+  "verification": {
+    "directSanityGroq": {
+      "success": true,
+      "projectId": "gjy7dyq2",
+      "dataset": "production",
+      "typedDocumentCountsRetrieved": true,
+      "relationshipJoins": [
+        "requirement-next16-node.subject -> version-next-16 -> technology Next.js; requiredTechnology -> Node.js; sources -> Next.js 16 upgrade guide",
+        "breaking-next16-node18.affectedVersions -> version-next-16 -> technology Next.js; migrations -> migration-node-runtime -> requiredFor and sources"
+      ],
+      "relationshipChecks": {
+        "requirementSubjectLinksResolved": 5,
+        "versionTechnologyLinksResolved": 14,
+        "breakingChangeAffectedVersionLinksResolved": 5,
+        "migrationSourceLinksResolved": 5
+      }
+    },
+    "contextMcp": {
+      "success": true,
+      "toolsDiscovered": [
+        "initial_context",
+        "groq_query",
+        "schema_explorer",
+        "array_field_reader"
+      ],
+      "initialContextCall": true,
+      "schemaExplorerTypes": [
+        "technology",
+        "version",
+        "requirement",
+        "compatibilityRule",
+        "breakingChange",
+        "migration",
+        "exception",
+        "source"
+      ],
+      "groqQueryCall": true,
+      "datasetDocumentCountIncludingSanitySystemDocuments": 65,
+      "representativeMultiHopQueriesSucceeded": true
+    },
+    "schemaValidation": {
+      "command": "npx sanity@latest schemas validate",
+      "success": true,
+      "errors": 0,
+      "warnings": 0
+    }
+  },
+  "representativeGroqQueries": [
+    "*[_type == \"requirement\" && _id == \"requirement-next16-node\"][0]{_id, statement, versionRange, \"subject\": subject->{label, \"technology\": technology->name}, \"requiredTechnology\": requiredTechnology->name, \"sources\": sources[]->{title, url}}",
+    "*[_type == \"breakingChange\" && _id == \"breaking-next16-node18\"][0]{_id, title, \"affectedVersions\": affectedVersions[]->{label, \"technology\": technology->name}, \"migrations\": migrations[]->{title, \"requiredFor\": requiredFor[]->title, \"sources\": sources[]->{title, url}}}",
+    "*[_type == \"compatibilityRule\" && _id == \"compat-node20-eol-temporal\"][0]{_id, title, outcome, condition, \"appliesTo\": appliesTo[]->{label, \"technology\": technology->name}, \"dependsOn\": dependsOn[]->{label, \"technology\": technology->name}, \"sources\": sources[]->{title, url}}"
+  ],
+  "representativeGroqResults": [
+    {
+      "queryId": "requirement-next16-node",
+      "result": {
+        "_id": "requirement-next16-node",
+        "subject": {
+          "label": "16",
+          "technology": "Next.js"
+        },
+        "requiredTechnology": "Node.js",
+        "versionRange": ">=20.9.0",
+        "source": {
+          "title": "How to upgrade to version 16",
+          "url": "https://nextjs.org/docs/app/guides/upgrading/version-16"
+        }
+      }
+    },
+    {
+      "queryId": "breaking-next16-node18",
+      "result": {
+        "_id": "breaking-next16-node18",
+        "affectedVersions": [
+          {
+            "label": "16",
+            "technology": "Next.js"
+          }
+        ],
+        "migration": {
+          "title": "Upgrade Node.js for Next.js 16",
+          "requiredFor": "Node.js 18 support removed in Next.js 16",
+          "source": "https://nextjs.org/docs/app/guides/upgrading/version-16"
+        }
+      }
+    },
+    {
+      "queryId": "compat-node20-eol-temporal",
+      "result": {
+        "_id": "compat-node20-eol-temporal",
+        "outcome": "conditional",
+        "appliesTo": [
+          {
+            "label": "16",
+            "technology": "Next.js"
+          }
+        ],
+        "dependsOn": [
+          {
+            "label": "20.9",
+            "technology": "Node.js"
+          }
+        ],
+        "sources": [
+          "https://nextjs.org/docs/app/guides/upgrading/version-16",
+          "https://nodejs.org/en/about/previous-releases"
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "Node.js 20.9 meets the Next.js 16 framework minimum, but the official Node.js releases table marks the Node.js 20 major line EOL as retrieved 2026-10-04; these are separate facts, not a claim of Next.js incompatibility.",
+    "Next.js 16 React evidence is scoped to the App Router's React Canary and React 19.2 features; the source does not establish a stable exact React package version for all deployments.",
+    "No documents were added to represent unsupported compatibility claims; absent facts remain unresolved by the reasoning layer."
+  ]
+}
