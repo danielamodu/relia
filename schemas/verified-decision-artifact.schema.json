@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://relia.local/schemas/verified-decision-artifact.schema.json",
+  "title": "Relia VerifiedDecisionArtifact",
+  "type": "object",
+  "required": ["artifactVersion", "investigationId", "fingerprint", "decision", "subject", "findings", "constraints", "evidence", "relationships", "proof", "verification", "provenance"],
+  "additionalProperties": false,
+  "properties": {
+    "artifactVersion": { "const": "1" },
+    "investigationId": { "type": "string", "minLength": 1 },
+    "fingerprint": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "decision": { "enum": ["SAFE", "BLOCKED", "UNRESOLVED"] },
+    "subject": { "type": "object", "required": ["technology", "from", "to"], "properties": { "technology": { "type": "string" }, "from": { "type": "string" }, "to": { "type": "string" } } },
+    "findings": { "type": "array", "items": { "type": "object" } },
+    "constraints": { "type": "array", "items": { "type": "object" } },
+    "evidence": { "type": "array", "items": { "type": "object" } },
+    "relationships": { "type": "array", "items": { "type": "object" } },
+    "proof": { "type": "object", "required": ["complete", "trace"], "properties": { "complete": { "type": "boolean" }, "trace": { "type": "array", "items": { "type": "object", "required": ["documentId", "documentType", "field", "relationship", "sourceId", "sourceUrl"] } } } },
+    "verification": { "type": "object", "required": ["redTeam"], "properties": { "redTeam": { "type": "object", "required": ["status", "executed", "challenges"], "properties": { "status": { "enum": ["PASSED", "CHALLENGE_FOUND", "FAILED"] }, "executed": { "type": "boolean" }, "challenges": { "type": "array" }, "initialDecision": { "enum": ["SAFE", "BLOCKED", "UNRESOLVED"] }, "finalDecision": { "enum": ["SAFE", "BLOCKED", "UNRESOLVED"] } } } } },
+    "provenance": { "type": "object", "required": ["evidenceSnapshot", "sources", "documents", "relationships", "canonicalContract", "timestamp"], "properties": { "evidenceSnapshot": { "type": "object" }, "sources": { "type": "array" }, "documents": { "type": "array" }, "relationships": { "type": "array" }, "canonicalContract": { "type": "string" }, "timestamp": { "type": "string" } } }
+  }
+}

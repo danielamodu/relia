@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://relia.dev/schemas/benchmark-case.schema.json",
+  "title": "Relia reviewed benchmark case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "reviewedDraftId", "question", "input", "expectedDecision", "expectedEvidence", "requiredRelationships", "requiredSources", "category", "reviewStatus", "answerabilityReason", "expectedRationale", "expectedRedTeam"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+    "reviewedDraftId": { "type": "string" },
+    "question": { "type": "string", "minLength": 1 },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["currentStack", "proposedChanges"],
+      "properties": {
+        "currentStack": { "type": "object", "additionalProperties": { "type": ["string", "number", "boolean"] } },
+        "proposedChanges": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["technology", "from", "to"],
+            "properties": {
+              "technology": { "type": "string" },
+              "from": { "type": "string" },
+              "to": { "type": "string" },
+              "scope": { "type": "string" }
+            }
+          }
+        },
+        "questionIntent": { "type": "string" }
+      }
+    },
+    "expectedDecision": { "enum": ["SAFE", "BLOCKED", "UNRESOLVED"] },
+    "expectedEvidence": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "requiredRelationships": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "requiredSources": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "category": { "enum": ["straightforward-compatible", "explicit-version-requirement", "breaking-change", "migration-and-conditional-rule", "conditional-compatibility", "exception", "conflicting-evidence-resolved-by-scope", "conflicting-evidence", "temporal-lifecycle", "missing-evidence", "unknown-relationship"] },
+    "reviewStatus": { "enum": ["ANSWERABLE", "INSUFFICIENT_EVIDENCE", "INVALID"] },
+    "answerabilityReason": { "type": "string", "minLength": 1 },
+    "expectedRationale": { "type": "string", "minLength": 1 },
+    "expectedRedTeam": { "enum": ["PASSED", "CHALLENGE_FOUND"] }
+  }
+}

@@ -1,0 +1,15 @@
+[
+  {"_id":"version-next-15","technology":"tech-nextjs","label":"15","releaseDate":null,"lifecycle":"unknown","sources":["source-next15-release"]},
+  {"_id":"version-next-15-1","technology":"tech-nextjs","label":"15.1","releaseDate":"2024-12-10","lifecycle":"unknown","sources":["source-next151-release"]},
+  {"_id":"version-next-15-4","technology":"tech-nextjs","label":"15.4","releaseDate":"2025-07-14","lifecycle":"unknown","sources":["source-next154-release"]},
+  {"_id":"version-next-16","technology":"tech-nextjs","label":"16","releaseDate":null,"lifecycle":"unknown","sources":["source-next16-upgrade"]},
+  {"_id":"version-react-18","technology":"tech-react","label":"18","releaseDate":null,"lifecycle":"unknown","sources":["source-next15-release"]},
+  {"_id":"version-react-19","technology":"tech-react","label":"19","releaseDate":"2024-12-05","lifecycle":"unknown","sources":["source-react19-release"]},
+  {"_id":"version-react-dom-18","technology":"tech-react-dom","label":"18","releaseDate":null,"lifecycle":"unknown","sources":["source-next15-release"]},
+  {"_id":"version-react-dom-19","technology":"tech-react-dom","label":"19","releaseDate":"2024-12-05","lifecycle":"unknown","sources":["source-react19-release"]},
+  {"_id":"version-node-18-18","technology":"tech-node","label":"18.18","releaseDate":null,"lifecycle":"end-of-life","sources":["source-next15-release","source-node-releases"]},
+  {"_id":"version-node-20-9","technology":"tech-node","label":"20.9","releaseDate":null,"lifecycle":"end-of-life","sources":["source-next16-upgrade","source-node-releases"]},
+  {"_id":"version-node-22","technology":"tech-node","label":"22","releaseDate":"2024-04-24","lifecycle":"supported","sources":["source-node-releases"]},
+  {"_id":"version-ts-5","technology":"tech-typescript","label":"5","releaseDate":null,"lifecycle":"unknown","sources":["source-next16-upgrade"]},
+  {"_id":"version-ts-5-1","technology":"tech-typescript","label":"5.1","releaseDate":"2023-05-30","lifecycle":"unknown","sources":["source-ts51-release","source-next16-upgrade"]}
+]

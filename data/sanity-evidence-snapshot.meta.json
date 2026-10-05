@@ -1,0 +1,9 @@
+{
+  "projectId": "gjy7dyq2",
+  "dataset": "production",
+  "retrievedAt": "2026-10-05",
+  "retrieval": "Sanity CLI documents query with GROQ against authenticated CLI session",
+  "query": "*[_type in [\"technology\",\"version\",\"requirement\",\"compatibilityRule\",\"breakingChange\",\"migration\",\"exception\",\"source\"]] | order(_type asc, _id asc)",
+  "documentCount": 52,
+  "note": "Includes returned Sanity document IDs, fields, and reference objects. Offline benchmark uses this checked-in evidence snapshot and performs no network calls."
+}

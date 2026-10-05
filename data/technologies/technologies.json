@@ -1,0 +1,7 @@
+[
+  {"_id":"tech-nextjs","name":"Next.js","slug":"nextjs","ecosystem":"JavaScript web framework"},
+  {"_id":"tech-react","name":"React","slug":"react","ecosystem":"JavaScript UI library"},
+  {"_id":"tech-react-dom","name":"React DOM","slug":"react-dom","ecosystem":"React renderer"},
+  {"_id":"tech-node","name":"Node.js","slug":"nodejs","ecosystem":"JavaScript runtime"},
+  {"_id":"tech-typescript","name":"TypeScript","slug":"typescript","ecosystem":"JavaScript language and type checker"}
+]

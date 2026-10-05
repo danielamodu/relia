@@ -1,0 +1,1045 @@
+[
+  {
+    "_type": "source",
+    "_id": "source-next15-release",
+    "title": "Next.js 15",
+    "url": "https://nextjs.org/blog/next-15",
+    "publisher": "Vercel / Next.js",
+    "publishedAt": "2024-10-21",
+    "accessedAt": "2026-10-04",
+    "sourceType": "release-notes",
+    "authorityNotes": "Official Next.js release announcement. Supports claims about Next.js 15 requirements and router-specific React support."
+  },
+  {
+    "_type": "source",
+    "_id": "source-next15-upgrade",
+    "title": "How to upgrade to version 15",
+    "url": "https://nextjs.org/docs/app/guides/upgrading/version-15",
+    "publisher": "Vercel / Next.js",
+    "publishedAt": null,
+    "updatedAt": "2026-08-25",
+    "accessedAt": "2026-10-04",
+    "sourceType": "migration-guide",
+    "authorityNotes": "Official version 15 upgrade guide. Covers 14-to-15 upgrade behavior and requirements."
+  },
+  {
+    "_type": "source",
+    "_id": "source-next16-upgrade",
+    "title": "How to upgrade to version 16",
+    "url": "https://nextjs.org/docs/app/guides/upgrading/version-16",
+    "publisher": "Vercel / Next.js",
+    "publishedAt": null,
+    "updatedAt": "2026-08-25",
+    "accessedAt": "2026-10-04",
+    "sourceType": "migration-guide",
+    "authorityNotes": "Official version 16 upgrade guide. Covers 15-to-16 upgrade behavior and requirements."
+  },
+  {
+    "_type": "source",
+    "_id": "source-next151-release",
+    "title": "Next.js 15.1",
+    "url": "https://nextjs.org/blog/next-15-1",
+    "publisher": "Vercel / Next.js",
+    "publishedAt": "2024-12-10",
+    "accessedAt": "2026-10-04",
+    "sourceType": "release-notes",
+    "authorityNotes": "Official Next.js 15.1 announcement. Describes stable React 19 support in both routers and continued React 18 support in Pages Router."
+  },
+  {
+    "_type": "source",
+    "_id": "source-react19-upgrade",
+    "title": "React 19 Upgrade Guide",
+    "url": "https://react.dev/blog/2024/04/25/react-19-upgrade-guide",
+    "publisher": "React Team",
+    "publishedAt": "2024-04-25",
+    "accessedAt": "2026-10-04",
+    "sourceType": "migration-guide",
+    "authorityNotes": "Official React upgrade guide; React 19 install instructions specify matching react and react-dom major versions and updated types."
+  },
+  {
+    "_type": "source",
+    "_id": "source-react19-release",
+    "title": "React v19",
+    "url": "https://react.dev/blog/2024/12/05/react-19",
+    "publisher": "React Team",
+    "publishedAt": "2024-12-05",
+    "accessedAt": "2026-10-04",
+    "sourceType": "release-notes",
+    "authorityNotes": "Official stable React 19 release announcement; includes React DOM release information and a link to the upgrade guide."
+  },
+  {
+    "_type": "source",
+    "_id": "source-node-releases",
+    "title": "Node.js Releases",
+    "url": "https://nodejs.org/en/about/previous-releases",
+    "publisher": "OpenJS Foundation / Node.js project",
+    "publishedAt": null,
+    "accessedAt": "2026-10-04",
+    "sourceType": "official-docs",
+    "authorityNotes": "Official release-line schedule, lifecycle state, and dates. These values are time-sensitive."
+  },
+  {
+    "_type": "source",
+    "_id": "source-node-eol",
+    "title": "Node.js End-of-Life",
+    "url": "https://nodejs.org/en/about/eol",
+    "publisher": "OpenJS Foundation / Node.js project",
+    "publishedAt": null,
+    "accessedAt": "2026-10-04",
+    "sourceType": "official-docs",
+    "authorityNotes": "Official explanation of EOL consequences and EOL release lines."
+  },
+  {
+    "_type": "source",
+    "_id": "source-ts51-release",
+    "title": "TypeScript 5.1 Release Notes",
+    "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-1.html",
+    "publisher": "Microsoft / TypeScript",
+    "publishedAt": "2023-05-30",
+    "accessedAt": "2026-10-04",
+    "sourceType": "release-notes",
+    "authorityNotes": "Official TypeScript release notes. Establishes TypeScript version existence/date, not Next.js compatibility."
+  },
+  {
+    "_type": "source",
+    "_id": "source-react192-release",
+    "title": "React 19.2",
+    "url": "https://react.dev/blog/2025/10/01/react-19-2",
+    "publisher": "React Team",
+    "publishedAt": "2025-10-01",
+    "accessedAt": "2026-10-04",
+    "sourceType": "release-notes",
+    "authorityNotes": "Official React 19.2 release announcement; used with Next.js 16's statement that its App Router Canary includes React 19.2 features."
+  },
+  {
+    "_type": "technology",
+    "_id": "tech-nextjs",
+    "name": "Next.js",
+    "slug": {
+      "_type": "slug",
+      "current": "nextjs"
+    }
+  },
+  {
+    "_type": "technology",
+    "_id": "tech-react",
+    "name": "React",
+    "slug": {
+      "_type": "slug",
+      "current": "react"
+    }
+  },
+  {
+    "_type": "technology",
+    "_id": "tech-react-dom",
+    "name": "React DOM",
+    "slug": {
+      "_type": "slug",
+      "current": "react-dom"
+    }
+  },
+  {
+    "_type": "technology",
+    "_id": "tech-node",
+    "name": "Node.js",
+    "slug": {
+      "_type": "slug",
+      "current": "nodejs"
+    }
+  },
+  {
+    "_type": "technology",
+    "_id": "tech-typescript",
+    "name": "TypeScript",
+    "slug": {
+      "_type": "slug",
+      "current": "typescript"
+    }
+  },
+  {
+    "_type": "version",
+    "_id": "version-next-15",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-nextjs"
+    },
+    "label": "15",
+    "releaseDate": null,
+    "lifecycle": "unknown",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next15-release"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-next-15-1",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-nextjs"
+    },
+    "label": "15.1",
+    "releaseDate": "2024-12-10",
+    "lifecycle": "unknown",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next151-release"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-next-16",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-nextjs"
+    },
+    "label": "16",
+    "releaseDate": null,
+    "lifecycle": "unknown",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-react-18",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-react"
+    },
+    "label": "18",
+    "releaseDate": null,
+    "lifecycle": "unknown",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next15-release"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-react-19",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-react"
+    },
+    "label": "19",
+    "releaseDate": "2024-12-05",
+    "lifecycle": "unknown",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-react19-release"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-react-dom-18",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-react-dom"
+    },
+    "label": "18",
+    "releaseDate": null,
+    "lifecycle": "unknown",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next15-release"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-react-dom-19",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-react-dom"
+    },
+    "label": "19",
+    "releaseDate": "2024-12-05",
+    "lifecycle": "unknown",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-react19-release"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-node-18-18",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-node"
+    },
+    "label": "18.18",
+    "releaseDate": null,
+    "lifecycle": "end-of-life",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next15-release"
+      },
+      {
+        "_type": "reference",
+        "_ref": "source-node-releases"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-node-20-9",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-node"
+    },
+    "label": "20.9",
+    "releaseDate": null,
+    "lifecycle": "end-of-life",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      },
+      {
+        "_type": "reference",
+        "_ref": "source-node-releases"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-node-22",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-node"
+    },
+    "label": "22",
+    "releaseDate": "2024-04-24",
+    "lifecycle": "supported",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-node-releases"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-ts-5",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-typescript"
+    },
+    "label": "5",
+    "releaseDate": null,
+    "lifecycle": "unknown",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-ts-5-1",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-typescript"
+    },
+    "label": "5.1",
+    "releaseDate": "2023-05-30",
+    "lifecycle": "unknown",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-ts51-release"
+      },
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-react-19-2",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-react"
+    },
+    "label": "19.2",
+    "releaseDate": "2025-10-01",
+    "lifecycle": "unknown",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-react192-release"
+      }
+    ]
+  },
+  {
+    "_type": "version",
+    "_id": "version-react-dom-19-2",
+    "technology": {
+      "_type": "reference",
+      "_ref": "tech-react-dom"
+    },
+    "label": "19.2",
+    "releaseDate": "2025-10-01",
+    "lifecycle": "unknown",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-react192-release"
+      }
+    ]
+  },
+  {
+    "_type": "requirement",
+    "_id": "requirement-next15-node",
+    "subject": {
+      "_type": "reference",
+      "_ref": "version-next-15"
+    },
+    "requiredTechnology": {
+      "_type": "reference",
+      "_ref": "tech-node"
+    },
+    "versionRange": ">=18.18.0",
+    "statement": "Next.js 15 requires Node.js 18.18.0 or later.",
+    "sourceEvidence": "The release announcement lists: “The minimum required Node.js version has been updated to 18.18.0.”",
+    "validFrom": null,
+    "validThrough": null,
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next15-release"
+      }
+    ]
+  },
+  {
+    "_type": "requirement",
+    "_id": "requirement-next16-node",
+    "subject": {
+      "_type": "reference",
+      "_ref": "version-next-16"
+    },
+    "requiredTechnology": {
+      "_type": "reference",
+      "_ref": "tech-node"
+    },
+    "versionRange": ">=20.9.0",
+    "statement": "Next.js 16 requires Node.js 20.9.0 or later; Node.js 18 is no longer supported.",
+    "sourceEvidence": "Runtime support table: “Node.js 20.9+” and “Minimum version now 20.9.0 (LTS); Node.js 18 no longer supported.”",
+    "validFrom": null,
+    "validThrough": null,
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "requirement",
+    "_id": "requirement-next16-typescript",
+    "subject": {
+      "_type": "reference",
+      "_ref": "version-next-16"
+    },
+    "requiredTechnology": {
+      "_type": "reference",
+      "_ref": "tech-typescript"
+    },
+    "versionRange": ">=5.1.0",
+    "statement": "The Next.js 16 upgrade guide lists TypeScript 5.1.0 as the minimum version.",
+    "sourceEvidence": "Runtime support table: “TypeScript 5+” with details “Minimum version now 5.1.0.”",
+    "validFrom": null,
+    "validThrough": null,
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "requirement",
+    "_id": "requirement-next15-react19",
+    "subject": {
+      "_type": "reference",
+      "_ref": "version-next-15"
+    },
+    "requiredTechnology": {
+      "_type": "reference",
+      "_ref": "tech-react"
+    },
+    "versionRange": ">=19.0.0",
+    "statement": "The Next.js 15 upgrade guide specifies React 19 as the minimum for its documented upgrade path; the Next.js 15 release announcement separately documents a React 18 exception for Pages Router.",
+    "sourceEvidence": "Version 15 upgrade guide: minimum versions of react and react-dom are 19. Next.js 15 announcement: Pages Router maintains backward compatibility with React 18.",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next15-upgrade"
+      },
+      {
+        "_type": "reference",
+        "_ref": "source-next15-release"
+      }
+    ]
+  },
+  {
+    "_type": "requirement",
+    "_id": "requirement-next15-react-dom19",
+    "subject": {
+      "_type": "reference",
+      "_ref": "version-next-15"
+    },
+    "requiredTechnology": {
+      "_type": "reference",
+      "_ref": "tech-react-dom"
+    },
+    "versionRange": ">=19.0.0",
+    "statement": "The Next.js 15 upgrade guide specifies React DOM 19 as the minimum for its documented upgrade path; the Next.js 15 release announcement separately documents a React 18 exception for Pages Router.",
+    "sourceEvidence": "Version 15 upgrade guide: minimum versions of react and react-dom are 19. Next.js 15 announcement: Pages Router maintains backward compatibility with React 18.",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next15-upgrade"
+      },
+      {
+        "_type": "reference",
+        "_ref": "source-next15-release"
+      }
+    ]
+  },
+  {
+    "_type": "compatibilityRule",
+    "_id": "compat-next15-pages-react18",
+    "title": "Next.js 15 Pages Router supports React 18",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-15"
+      }
+    ],
+    "dependsOn": [
+      {
+        "_type": "reference",
+        "_ref": "version-react-18"
+      },
+      {
+        "_type": "reference",
+        "_ref": "version-react-dom-18"
+      }
+    ],
+    "outcome": "compatible",
+    "condition": "Pages Router. The Next.js 15.1 announcement explicitly says Pages Router continues to support React 18.",
+    "statement": "Next.js 15 maintains backward compatibility for the Pages Router with React 18; Next.js 15.1 says Pages Router continues to support React 18 alongside React 19 stable.",
+    "sourceEvidence": "Next.js 15 release: “Next.js 15 maintains backward compatibility for the Pages Router with React 18.” Next.js 15.1: Pages Router can use React 19 stable “alongside continued support for React 18.”",
+    "exceptions": [
+      {
+        "_type": "reference",
+        "_ref": "exception-next15-pages-react18"
+      }
+    ],
+    "validFrom": "2024-10-21",
+    "validThrough": null,
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next15-release"
+      },
+      {
+        "_type": "reference",
+        "_ref": "source-next151-release"
+      }
+    ]
+  },
+  {
+    "_type": "compatibilityRule",
+    "_id": "compat-next15-app-react19",
+    "title": "Next.js 15.1 supports React 19 across both routers",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-15-1"
+      }
+    ],
+    "dependsOn": [
+      {
+        "_type": "reference",
+        "_ref": "version-react-19"
+      },
+      {
+        "_type": "reference",
+        "_ref": "version-react-dom-19"
+      }
+    ],
+    "outcome": "conditional",
+    "condition": "Next.js 15.1. Pages Router can use React 19 stable; App Router continues to use built-in React Canary releases that include stable React 19 changes and newer framework-validated features.",
+    "statement": "Next.js 15.1 announces React 19 stable support in both routers, while describing the App Router's built-in React Canary behavior separately.",
+    "sourceEvidence": "Next.js 15.1 release notes: React 19 stable may be used in the Pages Router; the App Router continues to provide React Canary releases that include all stable React 19 changes and newer framework-validated features.",
+    "exceptions": [],
+    "validFrom": "2024-12-10",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next151-release"
+      }
+    ]
+  },
+  {
+    "_type": "compatibilityRule",
+    "_id": "compat-react-reactdom-matched-major",
+    "title": "React upgrade uses matching React and React DOM major",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-react-19"
+      }
+    ],
+    "dependsOn": [
+      {
+        "_type": "reference",
+        "_ref": "version-react-dom-19"
+      }
+    ],
+    "outcome": "compatible",
+    "condition": "React 19 installation path in the React 19 upgrade guide.",
+    "statement": "The React 19 upgrade guide recommends installing React 19 and React DOM 19 together.",
+    "sourceEvidence": "Install instructions: `react@^19.0.0 react-dom@^19.0.0`.",
+    "exceptions": [],
+    "validFrom": "2024-04-25",
+    "validThrough": null,
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-react19-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "compatibilityRule",
+    "_id": "compat-next16-proxy-edge-incompatible",
+    "title": "Proxy does not support Edge runtime in Next.js 16",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-16"
+      }
+    ],
+    "dependsOn": [
+      {
+        "_type": "reference",
+        "_ref": "tech-nextjs"
+      }
+    ],
+    "outcome": "incompatible",
+    "condition": "When migrating middleware to proxy, a proxy configured to use Edge runtime is unsupported.",
+    "statement": "The Next.js 16 proxy runtime is Node.js and cannot be configured; Edge runtime is not supported in proxy.",
+    "sourceEvidence": "The upgrade guide states: “The edge runtime is NOT supported in proxy. The proxy runtime is nodejs, and it cannot be configured.”",
+    "exceptions": [],
+    "validFrom": null,
+    "validThrough": null,
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "compatibilityRule",
+    "_id": "compat-next16-app-react19-2",
+    "title": "Next.js 16 App Router uses React Canary with React 19.2 features",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-16"
+      }
+    ],
+    "dependsOn": [
+      {
+        "_type": "reference",
+        "_ref": "tech-react"
+      }
+    ],
+    "outcome": "conditional",
+    "condition": "App Router only; Next.js documents its latest React Canary with React 19.2 features and incremental stabilization. This does not establish an exact stable React/React DOM package version for every deployment.",
+    "statement": "The Next.js 16 upgrade guide states that the App Router uses the latest React Canary, which includes the newly released React 19.2 features.",
+    "sourceEvidence": "Next.js 16 upgrade guide, section “React 19.2”: “The App Router in Next.js 16 uses the latest React Canary release, which includes the newly released React 19.2 features.”",
+    "exceptions": [],
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      },
+      {
+        "_type": "reference",
+        "_ref": "source-react192-release"
+      }
+    ]
+  },
+  {
+    "_type": "compatibilityRule",
+    "_id": "compat-node20-eol-temporal",
+    "title": "Node.js 20 meets the Next.js 16 floor but is EOL",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-16"
+      }
+    ],
+    "dependsOn": [
+      {
+        "_type": "reference",
+        "_ref": "version-node-20-9"
+      }
+    ],
+    "outcome": "conditional",
+    "condition": "Node.js 20.9 or later meets Next.js 16's stated minimum; as of the Node.js Releases page retrieved 2026-10-04, the Node.js 20 major line is EOL. Framework minimum satisfaction does not imply currently maintained runtime status.",
+    "statement": "Next.js 16's Node.js 20.9 minimum is met by the Node.js 20 line, but the Node.js project lists Node.js 20 as EOL as of this dataset's retrieval date.",
+    "sourceEvidence": "Next.js 16 guide lists Node.js 20.9+ as the minimum. Node.js Releases page lists v20 status as EOL; retrieved 2026-10-04.",
+    "exceptions": [],
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      },
+      {
+        "_type": "reference",
+        "_ref": "source-node-releases"
+      }
+    ]
+  },
+  {
+    "_type": "breakingChange",
+    "_id": "breaking-next16-node18",
+    "title": "Node.js 18 support removed in Next.js 16",
+    "affectedVersions": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-16"
+      }
+    ],
+    "statement": "Next.js 16 raises the minimum Node.js version to 20.9.0 and no longer supports Node.js 18.",
+    "sourceEvidence": "Runtime support table: “Node.js 20.9+” and “Node.js 18 no longer supported.”",
+    "migrations": [
+      {
+        "_type": "reference",
+        "_ref": "migration-node-runtime"
+      }
+    ],
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "breakingChange",
+    "_id": "breaking-next16-middleware-proxy",
+    "title": "Middleware convention renamed to Proxy in Next.js 16",
+    "affectedVersions": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-16"
+      }
+    ],
+    "statement": "The middleware filename and named export are deprecated and renamed to proxy; the upgrade guide supplies the rename and notes the Edge runtime caveat.",
+    "sourceEvidence": "Section “middleware to proxy”: filename and export rename instructions; “The edge runtime is NOT supported in proxy.”",
+    "migrations": [
+      {
+        "_type": "reference",
+        "_ref": "migration-middleware-proxy"
+      }
+    ],
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "breakingChange",
+    "_id": "breaking-next15-async-request",
+    "title": "Dynamic request APIs became asynchronous in Next.js 15",
+    "affectedVersions": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-15"
+      }
+    ],
+    "statement": "Next.js 15 changes cookies, headers, draftMode, params, and searchParams APIs from synchronous access to asynchronous APIs, with a codemod and temporary synchronous access path documented.",
+    "sourceEvidence": "Section “Async Request APIs”: lists cookies, headers, draftMode, params, and searchParams; says a codemod and temporary synchronous access are available.",
+    "migrations": [
+      {
+        "_type": "reference",
+        "_ref": "migration-async-request-apis"
+      }
+    ],
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next15-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "breakingChange",
+    "_id": "breaking-react19-render",
+    "title": "React 19 removes ReactDOM.render",
+    "affectedVersions": [
+      {
+        "_type": "reference",
+        "_ref": "version-react-19"
+      }
+    ],
+    "statement": "React 19 removes ReactDOM.render; applications using it must migrate to createRoot from react-dom/client.",
+    "sourceEvidence": "React 19 Upgrade Guide, “Removed: ReactDOM.render”: ReactDOM.render is removed in React 19 and directs users to ReactDOM.createRoot.",
+    "migrations": [
+      {
+        "_type": "reference",
+        "_ref": "migration-reactdom-render"
+      }
+    ],
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-react19-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "breakingChange",
+    "_id": "breaking-next16-sitemap-id",
+    "title": "Next.js 16 makes sitemap id asynchronous",
+    "affectedVersions": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-16"
+      }
+    ],
+    "statement": "Starting with Next.js 16, the id passed to a sitemap generating function is a Promise and must be awaited before use.",
+    "sourceEvidence": "Next.js 16 upgrade guide, “Async id parameter for sitemap”: the id is now Promise<string> and the example awaits it.",
+    "migrations": [
+      {
+        "_type": "reference",
+        "_ref": "migration-next16-sitemap-id"
+      }
+    ],
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "migration",
+    "_id": "migration-node-runtime",
+    "title": "Upgrade Node.js for Next.js 16",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-16"
+      }
+    ],
+    "requiredFor": [
+      {
+        "_type": "reference",
+        "_ref": "breaking-next16-node18"
+      }
+    ],
+    "steps": [
+      "Use Node.js 20.9.0 or later for Next.js 16."
+    ],
+    "statement": "The Next.js 16 upgrade guide sets Node.js 20.9.0 as the minimum; this migration step is satisfied by a declared Node.js version at or above that threshold.",
+    "sourceEvidence": "The guide's runtime support table sets Node.js minimum version to 20.9.0.",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "migration",
+    "_id": "migration-middleware-proxy",
+    "title": "Rename middleware to proxy",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-16"
+      }
+    ],
+    "requiredFor": [
+      {
+        "_type": "reference",
+        "_ref": "breaking-next16-middleware-proxy"
+      }
+    ],
+    "steps": [
+      "Rename middleware.ts or middleware.js to proxy.ts or proxy.js.",
+      "Rename the named export middleware to proxy.",
+      "Review runtime use: proxy uses Node.js runtime; Edge runtime is not supported in proxy."
+    ],
+    "statement": "The Next.js 16 upgrade guide documents renaming middleware files and exports to proxy and states that Edge runtime is not supported in proxy.",
+    "sourceEvidence": "Section “middleware to proxy” contains the two rename instructions and states proxy runtime is nodejs and cannot be configured; edge is not supported.",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "migration",
+    "_id": "migration-async-request-apis",
+    "title": "Migrate to asynchronous request APIs",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-15"
+      }
+    ],
+    "requiredFor": [
+      {
+        "_type": "reference",
+        "_ref": "breaking-next15-async-request"
+      }
+    ],
+    "steps": [
+      "Await cookies(), headers(), and draftMode().",
+      "Await params and searchParams where documented.",
+      "Use the provided codemod or documented temporary synchronous compatibility access where required."
+    ],
+    "statement": "The Next.js 15 upgrade guide documents the APIs becoming asynchronous and provides codemod and temporary synchronous access guidance.",
+    "sourceEvidence": "Async API section shows before/after examples such as `await cookies()` and describes a codemod and temporary synchronous compatibility casts.",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next15-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "migration",
+    "_id": "migration-reactdom-render",
+    "title": "Migrate ReactDOM.render to createRoot",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-react-19"
+      }
+    ],
+    "requiredFor": [
+      {
+        "_type": "reference",
+        "_ref": "breaking-react19-render"
+      }
+    ],
+    "steps": [
+      "Replace ReactDOM.render with createRoot from react-dom/client.",
+      "Render through the root returned by createRoot."
+    ],
+    "statement": "The React 19 Upgrade Guide directs applications using ReactDOM.render to migrate to createRoot.",
+    "sourceEvidence": "React 19 Upgrade Guide shows the before/after migration from render imported from react-dom to createRoot imported from react-dom/client.",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-react19-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "migration",
+    "_id": "migration-next16-sitemap-id",
+    "title": "Await the sitemap id in Next.js 16",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-16"
+      }
+    ],
+    "requiredFor": [
+      {
+        "_type": "reference",
+        "_ref": "breaking-next16-sitemap-id"
+      }
+    ],
+    "steps": [
+      "Treat the sitemap generating function's id parameter as a Promise.",
+      "Await id before converting or using it."
+    ],
+    "statement": "The Next.js 16 upgrade guide's before/after example changes synchronous id access to awaiting the id Promise.",
+    "sourceEvidence": "Next.js 16 guide: `const resolvedId = await id`; id is now Promise<string>.",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  },
+  {
+    "_type": "exception",
+    "_id": "exception-next15-pages-react18",
+    "title": "React 18 is supported in Next.js 15 Pages Router",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-15"
+      }
+    ],
+    "condition": "The application uses the Pages Router. This exception does not establish React 18 compatibility for the App Router.",
+    "effect": "Next.js 15 (including the 15.1 announcement) retains Pages Router support for React 18.",
+    "sourceEvidence": "Next.js 15 release announcement explicitly says Pages Router is backward compatible with React 18 and warns against mixed router React versions. Next.js 15.1 says Pages Router continues to support React 18.",
+    "validFrom": "2024-10-21",
+    "validThrough": null,
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next15-release"
+      },
+      {
+        "_type": "reference",
+        "_ref": "source-next151-release"
+      }
+    ]
+  },
+  {
+    "_type": "exception",
+    "_id": "exception-next16-edge-middleware",
+    "title": "Keep middleware when the Edge runtime is required",
+    "appliesTo": [
+      {
+        "_type": "reference",
+        "_ref": "version-next-16"
+      }
+    ],
+    "condition": "The existing middleware depends on the Edge runtime.",
+    "effect": "Do not migrate that middleware to proxy on the assumption that Edge is supported; the Next.js 16 guide says proxy runs on Node.js and advises keeping middleware to continue using Edge.",
+    "sourceEvidence": "Next.js 16 upgrade guide, “middleware to proxy”: Edge runtime is not supported in proxy; to continue using Edge, keep using middleware.",
+    "sources": [
+      {
+        "_type": "reference",
+        "_ref": "source-next16-upgrade"
+      }
+    ]
+  }
+]

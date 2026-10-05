@@ -1,0 +1,3 @@
+[
+  {"_id":"exception-next15-pages-react18","title":"React 18 is supported in Next.js 15 Pages Router","appliesTo":["version-next-15"],"condition":"The application uses the Pages Router. This exception does not establish React 18 compatibility for the App Router.","effect":"Next.js 15 (including the 15.1 announcement) retains Pages Router support for React 18.","sourceEvidence":"Next.js 15 release announcement explicitly says Pages Router is backward compatible with React 18 and warns against mixed router React versions. Next.js 15.1 says Pages Router continues to support React 18.","validFrom":"2024-10-21","validThrough":null,"sources":["source-next15-release","source-next151-release"]}
+]

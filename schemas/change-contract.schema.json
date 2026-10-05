@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://relia.local/schemas/change-contract.schema.json",
+  "title": "Relia ChangeContract",
+  "type": "object",
+  "required": ["subject", "environment", "context"],
+  "additionalProperties": false,
+  "properties": {
+    "subject": {
+      "type": "object",
+      "required": ["technology", "from", "to"],
+      "additionalProperties": false,
+      "properties": {
+        "technology": { "type": "string", "minLength": 1 },
+        "from": { "type": "string", "minLength": 1 },
+        "to": { "type": "string", "minLength": 1 }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": { "type": ["string", "number", "boolean"] }
+    },
+    "context": { "type": "object" },
+    "requestedBy": { "type": "string", "minLength": 1 },
+    "metadata": { "type": "object" }
+  }
+}
