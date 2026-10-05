@@ -14,10 +14,10 @@ let runtimePromise;
 let artifactValidatorPromise;
 const sha256 = (value) => createHash("sha256").update(value).digest("hex");
 
-async function getRuntime() {
+async function getRuntime(contract) {
   const source = process.env.RELIA_KNOWLEDGE_SOURCE ?? (process.env.NODE_ENV === "production" ? "context-mcp" : "snapshot");
   if (source === "context-mcp") {
-    const { repository, snapshot } = await loadLiveSanityContextRepository();
+    const { repository, snapshot } = await loadLiveSanityContextRepository(contract);
     return { repository, graph: new EvidenceGraph(repository, snapshot), snapshot };
   }
   if (process.env.NODE_ENV === "production") throw new Error("Production investigations must use the live Sanity Context MCP source.");
@@ -119,7 +119,7 @@ export async function createInvestigation(rawContract, options = {}) {
   const startedAt = new Date().toISOString();
   let runtime;
   try {
-    runtime = await getRuntime();
+    runtime = await getRuntime(contract);
     const fingerprint = `sha256:${sha256(`${canonicalContract}\n${runtime.snapshot.id}`)}`;
     const id = `inv_${fingerprint.slice(7, 31)}`;
     const input = toReasoningInput(contract, runtime.graph);

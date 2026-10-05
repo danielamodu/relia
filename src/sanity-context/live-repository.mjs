@@ -4,7 +4,38 @@ import { SanitySnapshotRepository } from "../knowledge/SanitySnapshotRepository.
 const expectedTypes = ["technology", "version", "requirement", "compatibilityRule", "breakingChange", "migration", "exception", "source"];
 const expectedProject = "gjy7dyq2";
 const expectedDataset = "production";
-const documentQuery = `{ "projectId": sanity::projectId(), "dataset": sanity::dataset(), "documents": *[_type in ${JSON.stringify(expectedTypes)}] | order(_type asc, _id asc) }`;
+const knownSlugs = new Map([
+  ["nextjs", "nextjs"], ["next", "nextjs"],
+  ["node", "nodejs"], ["nodejs", "nodejs"],
+  ["react", "react"], ["reactdom", "react-dom"],
+  ["typescript", "typescript"], ["ts", "typescript"],
+]);
+
+const normalizeIdentifier = (value) => String(value ?? "").toLowerCase().replace(/[^a-z0-9]/g, "");
+
+export function buildContractScopedQuery(contract) {
+  const slugs = [...new Set([
+    knownSlugs.get(normalizeIdentifier(contract.subject.technology)),
+    ...Object.keys(contract.environment ?? {}).map((key) => knownSlugs.get(normalizeIdentifier(key))),
+  ].filter(Boolean))];
+  const targetSlug = knownSlugs.get(normalizeIdentifier(contract.subject.technology));
+  const targetVersionIds = targetSlug
+    ? `*[_type == "version" && technology->slug.current == ${JSON.stringify(targetSlug)} && label == ${JSON.stringify(String(contract.subject.to))}]._id`
+    : "[]";
+  const targetRules = `*[_type == "compatibilityRule" && references(${targetVersionIds})]._id`;
+  const targetBreakingChanges = `*[_type == "breakingChange" && references(${targetVersionIds})]._id`;
+  const relevantDocuments = [
+    `*[_type == "technology" && slug.current in ${JSON.stringify(slugs)}]`,
+    `*[_type == "version" && technology->slug.current in ${JSON.stringify(slugs)}]`,
+    `*[_type == "requirement" && references(${targetVersionIds})]`,
+    `*[_type == "compatibilityRule" && references(${targetVersionIds})]`,
+    `*[_type == "breakingChange" && references(${targetVersionIds})]`,
+    `*[_type == "migration" && references(${targetBreakingChanges})]`,
+    `*[_type == "exception" && (references(${targetVersionIds}) || references(${targetRules}))]`,
+    `*[_type == "source"]`,
+  ];
+  return `{ "projectId": sanity::projectId(), "dataset": sanity::dataset(), "documents": (${relevantDocuments.join(" + ")}) | order(_type asc, _id asc) }`;
+}
 
 function stableValue(value) {
   if (Array.isArray(value)) return value.map(stableValue);
@@ -40,7 +71,7 @@ function unpackToolResult(result) {
 }
 
 /** Fetches the current, source-linked Relia documents through Sanity Context MCP for each investigation. */
-export async function loadLiveSanityContextRepository() {
+export async function loadLiveSanityContextRepository(contract) {
   const endpointValue = process.env.SANITY_CONTEXT_MCP_URL;
   const token = process.env.SANITY_ORGANIZATION_TOKEN;
   if (!endpointValue || !token) throw new Error("Live Sanity Context is not configured. Set SANITY_CONTEXT_MCP_URL and SANITY_ORGANIZATION_TOKEN in the server environment.");
@@ -78,16 +109,16 @@ export async function loadLiveSanityContextRepository() {
     return payload.result;
   }
 
-  const result = await rpc("tools/call", { name: "groq_query", arguments: { query: documentQuery } });
+  const query = buildContractScopedQuery(contract);
+  const result = await rpc("tools/call", { name: "groq_query", arguments: { query } });
   const data = unpackToolResult(result);
   if (data?.projectId !== expectedProject || data?.dataset !== expectedDataset) {
     throw new Error(`Sanity Context returned the wrong dataset. Expected ${expectedProject}.${expectedDataset}.`);
   }
   const documents = data.documents;
   if (!Array.isArray(documents) || documents.length === 0) throw new Error("Sanity Context returned no Relia documents for the configured dataset.");
-  const actualTypes = new Set(documents.map((document) => document?._type));
-  const missingTypes = expectedTypes.filter((type) => !actualTypes.has(type));
-  if (missingTypes.length) throw new Error(`Sanity Context dataset is missing required Relia document types: ${missingTypes.join(", ")}.`);
+  const unsupportedTypes = [...new Set(documents.map((document) => document?._type))].filter((type) => !expectedTypes.includes(type));
+  if (unsupportedTypes.length) throw new Error(`Sanity Context query returned unsupported Relia document types: ${unsupportedTypes.join(", ")}.`);
 
   const repository = SanitySnapshotRepository.fromDocuments(documents);
   const contentSha256 = createHash("sha256").update(JSON.stringify(stableValue(documents))).digest("hex");
@@ -99,7 +130,9 @@ export async function loadLiveSanityContextRepository() {
     retrievedAt,
     documentCount: repository.allDocuments().length,
     contentSha256,
-    retrieval: "Sanity Context MCP groq_query (live per investigation)",
+    retrieval: "Sanity Context MCP groq_query (contract-scoped live per investigation)",
+    querySha256: createHash("sha256").update(query).digest("hex"),
+    scope: { subject: contract.subject, environment: contract.environment ?? {}, context: contract.context ?? {} },
   };
   return { repository, snapshot };
 }

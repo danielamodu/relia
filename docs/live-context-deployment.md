@@ -1,6 +1,6 @@
 # Live Sanity Context mode
 
-Production investigations query the Sanity Context MCP endpoint for the current Relia documents on every request. The GROQ response is checked for project `gjy7dyq2`, dataset `production`, and the eight required Relia document types before it reaches the existing `KnowledgeRepository` reasoning boundary. A failed or incomplete live query fails the investigation; production never silently falls back to the checked-in snapshot.
+Production investigations query the Sanity Context MCP endpoint on every request. The GROQ query scopes retrieval to the proposed target version, technologies named in the environment, linked requirements, compatibility rules, breaking changes, migrations, exceptions, and source records. The response is checked for project `gjy7dyq2`, dataset `production`, and supported Relia document types before it reaches the existing `KnowledgeRepository` reasoning boundary. A failed or empty live query fails the investigation; production never silently falls back to the checked-in snapshot.
 
 ## Vercel configuration
 

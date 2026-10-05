@@ -31,7 +31,7 @@ flowchart TD
   Artifact --> Consumers[UI / CLI / external agent]
 ```
 
-Production investigations query the live Sanity Context MCP endpoint with GROQ on every request. The response is checked against project `gjy7dyq2.production` and must include all eight Relia schema types before reasoning begins. Local development and benchmark runs use the checked-in snapshot for deterministic replay; production never silently falls back to it. See [live Context deployment](docs/live-context-deployment.md).
+Production investigations query the live Sanity Context MCP endpoint with GROQ on every request. Each query is scoped to the proposed target version, the technologies named in the environment, linked requirements/rules/changes/migrations/exceptions, and source records. The response is checked against project `gjy7dyq2.production` and the supported Relia schema types before reasoning begins. Local development and benchmark runs use the checked-in snapshot for deterministic replay; production never silently falls back to it. See [live Context deployment](docs/live-context-deployment.md).
 
 ## Sanity Context integration
 
